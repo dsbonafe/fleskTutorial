@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Episode 2</title>
+</head>
+<body>
+    Enter Python to execute:
+    <form action="/" method="post">
+        <input type="text" name="expression" />
+        <input type="submit" name="Execute" />
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {%if messages %}
+            Results:
+            <pre>
+
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+
+            </pre>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
